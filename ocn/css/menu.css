@@ -1,0 +1,61 @@
+@charset "UTF-8";
+nav{
+    height: 120px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.menu{
+    width: 1200px;
+    height: inherit;
+    margin: 0 auto;
+    padding-top: 10px;
+    box-sizing: border-box;
+    position: relative;
+}  
+
+/*OCN 로고*/
+.menu > span{
+    width: 180px;
+    height: 55px;
+    margin: 0 auto;
+    margin-bottom: 25px;
+    background-image: url("../images/ocn_logo.png");
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+/*메인 메뉴*/
+.menu > ul{
+    width: inherit;
+    height: 30px;
+    font-size: 16px;
+    font-weight: 500;
+    position: absolute;
+    z-index: 10;
+}
+.menu > ul > li{
+    width: 240px;
+    height: inherit;
+    line-height: 30px;
+    float: left;
+    text-align: center;
+    cursor: pointer;
+}
+
+/*소메뉴*/
+.menu > ul > li > div{
+    width: 240px;
+    height: 0px;
+    font-size: 14px;
+    font-weight: 400;
+    display: none;
+}
+.menu > ul > li > div > ol{
+    width: inherit;
+    height: auto;
+}
+.menu > ul > li > div > ol > li{
+    width:inherit;
+    height: 30px;
+    line-height: 30px;
+    background-color: rgba(255,255,255,0.8);
+}

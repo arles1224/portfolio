@@ -40,20 +40,16 @@ nav{
     text-align: center;
     cursor: pointer;
 }
-
 /*소메뉴*/
-.menu > ul > li > div{
-    width: 240px;
-    height: 0px;
+.menu > ul > li > ol{
+    width: inherit;
+    height: 0;
+    transition: all 1s;
     font-size: 14px;
     font-weight: 400;
-    display: none;
+    overflow: hidden;
 }
-.menu > ul > li > div > ol{
-    width: inherit;
-    height: auto;
-}
-.menu > ul > li > div > ol > li{
+.menu > ul > li > ol > li{
     width:inherit;
     height: 30px;
     line-height: 30px;

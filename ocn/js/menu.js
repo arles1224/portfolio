@@ -9,19 +9,17 @@ xhrMenu.send();
 
 //HTML 출력
 var mainMenu = document.getElementById("main");
-var ulliMenu, olMenu, olliMenu, menuDiv;
+var ulliMenu, olMenu, olliMenu;
 function ajaxMenu(array){
     //console.log(array);
     array.forEach(function(m1,m2,m3){
-        menuDiv = document.createElement("div");
         ulliMenu = document.createElement("li");
         olMenu = document.createElement("ol");
-        menuDiv.id = "menu"+m2;
+        olMenu.id = "menu"+m2;
         ulliMenu.setAttribute("onmouseenter","meMenu("+"'"+m2+"'"+")")
         ulliMenu.setAttribute("onmouseleave","mlMenu("+"'"+m2+"'"+")")
         ulliMenu.textContent = m1.main_menu;
-        menuDiv.appendChild(olMenu);
-        ulliMenu.appendChild(menuDiv);
+        ulliMenu.appendChild(olMenu);
         mainMenu.appendChild(ulliMenu);
         array[m2].menu_list.forEach(function(s1,s2,s3){
             olliMenu = document.createElement("li");
@@ -38,15 +36,14 @@ function siteMenu(url){
 }
 
 //소메뉴 마우스 핸들링 함수
-var menuDivId;
+var olMenuId;
 function meMenu(no){
-    menuDivId = document.getElementById("menu"+no);
-    menuDivId.style.display = "block";
-    menuDivId.style.height
+    olMenuId = document.getElementById("menu"+no);
+    olMenuId.style.height = olMenuId.children.length * olMenuId.firstElementChild.offsetHeight + "px";
 }
 function mlMenu(no){
-    menuDivId = document.getElementById("menu"+no);
-    menuDivId.style.display = "none";
+    olMenuId = document.getElementById("menu"+no);
+    olMenuId.style.height = "0px";
 }
 
 //OCN 로고 클릭 시 이동하는 함수
